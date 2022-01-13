@@ -5,10 +5,10 @@ Calendar for sports events. Events may be added to the calendar and categorized 
 1. Coding Exercise 
 Goal is to implement a calendar for sport events. Events may be added to the calendar and it 
 should be possible to categorize the events based on sports. 
-
-Examples: 
-• Sat., 18.07.2019, 18:30, Football, Salzburg – Sturm 
-• Sun., 23.10.2019, 09:45, Ice Hockey, KAC - Capitals 
+<br>
+<ul>Examples: 
+<li>• Sat., 18.07.2019, 18:30, Football, Salzburg – Sturm 
+<li>• Sun., 23.10.2019, 09:45, Ice Hockey, KAC - Capitals 
 
 2. Task 1 – Modelling
 Start with identifying the database entities and then create a suitable database diagram (ERD). 
