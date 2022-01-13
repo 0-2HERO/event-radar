@@ -29,8 +29,8 @@ indicated but no functionality is needed.
 Then go on with the dynamic display of data – avoid SQL queries within loops! 
 
 Required parts:  
-*Database connection 
-*SQL query 
-*Data output 
+* Database connection 
+* SQL query 
+* Data output 
 
 Additional filters can be added to the calendar presentation 
