@@ -23,4 +23,4 @@ Required parts:
 • Database connection 
 • SQL query 
 • Data output  
-Additional filters can be added to the calendar presentation
+Additional filters can be added to the calendar presentation 
