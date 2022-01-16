@@ -33,4 +33,11 @@ Required parts:
 * SQL query 
 * Data output 
 
-Additional filters can be added to the calendar presentation 
+Additional filters can be added to the calendar presentation  
+
+ </br> </br>
+ 1. Task  <strong>Entity-Relationship-Diagram       
+ </br>
+ 
+![Entity-Relationship-Diagram](https://user-images.githubusercontent.com/64213996/149678046-a444a658-600c-4521-8025-ebab6e49dd9e.png)
+
