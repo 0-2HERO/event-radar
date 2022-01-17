@@ -13,7 +13,7 @@ if ($_POST) {
     $location = $_POST['location_name'];
     $eventId = $_POST['eventId'];
 
-    date("Y-m-d H:i:s",strtotime($datetime));
+    
 
 
 

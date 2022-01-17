@@ -127,7 +127,7 @@ var_dump($teamB)
                     </tr>
 
                     <tr>
-                        <td><button class='btn btn-success' type="submit"> Insert Event </button></td>
+                        <td><button class='btn btn-success' type="submit">Save</button></td>
                         <td><a href="index.php"><button class='btn btn-warning' type="button"> Home </button></a></td>
                     </tr>
 

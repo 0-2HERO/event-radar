@@ -37,9 +37,7 @@ if ($_GET['eventId']) {
     } else {
         header("location: error.php");
     }
-} else {
-    header("location: error.php");
-}
+} 
 
 $resultList = mysqli_query($connect, "SELECT * FROM teama");
 $teamAlist = "";

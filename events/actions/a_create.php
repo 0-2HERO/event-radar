@@ -12,7 +12,7 @@ if ($_POST) {
     $picture = $_POST['picture'];
     $category = $_POST['category_name'];
     $location = $_POST['location_name'];
-  
+
 
 
 
@@ -57,7 +57,7 @@ if ($_POST) {
 
             <a href='../index.php'><button class="btn btn-primary" type='button'>Home</button></a>
         </div>
-        </ div>
+    </div>
 </body>
 
 </html>
