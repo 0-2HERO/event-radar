@@ -17,7 +17,7 @@ if ($_POST) {
 
 
 
-    $sql = "UPDATE `events` SET `event_name`='$name',`event_date`='$event_date',`event_time`='$event_time',`description`='$description',`picture`='$picture',`fk_teamA_Id`='$teamA',`fk_teamB_Id`='$teamB',`fk_categoryId`='$category',`fk_locationId`='$location' WHERE eventId = {$eventId}";
+    $sql = "UPDATE `events` SET `event_name`='$name',`event_date`='$date',`event_time`='$time',`description`='$description',`picture`='$picture',`fk_teamA_Id`='$teamA',`fk_teamB_Id`='$teamB',`fk_categoryId`='$category',`fk_locationId`='$location' WHERE eventId = {$eventId}";
 
         if (mysqli_query($connect, $sql) === TRUE) {
         $class = "success";

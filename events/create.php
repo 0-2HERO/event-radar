@@ -1,6 +1,11 @@
 <?php
-
+ session_start();
 require_once 'components/db_connect.php';
+
+if( !isset($_SESSION['user'])) {
+    header("Location: ../login.php");
+    exit;
+   }
 
 $category = "";
 $teamA = "";
@@ -44,8 +49,6 @@ while ($row = $resultLoc->fetch_array(MYSQLI_ASSOC)) {
     $location .=
         "<option value='{$row['locationId']}'>{$row['location_name']}</option>";
 }
-var_dump($teamA);
-var_dump($teamB)
 
 ?>
 
@@ -66,6 +69,7 @@ var_dump($teamB)
     </head>
 
     <body>
+    <?php  require_once 'components/_navbar.php'?>
         <fieldset class="mx-auto  mt-5" style="width: 60%;">
             <legend class='h2'>New Event</legend>
             <form action="actions/a_create.php" method="post" enctype="multipart/form-data">

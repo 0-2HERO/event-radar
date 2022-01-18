@@ -1,18 +1,15 @@
 <?php
 session_start();
-require_once 'components/db_connect.php';
+require_once 'events/components/db_connect.php';
 
-if( !isset($_SESSION['user'])) {
-    header("Location: ../login.php");
-    exit;
-   }
+
 
 $sql = "SELECT `events`.`event_name`, `events`.`eventId`, `teama`.`teamA_name`, `teamb`.`teamB_name`, `location`.`location_name`, `category`.`category_name`, `events`.`picture`
 FROM `events` 
 	LEFT JOIN `teama` ON `events`.`fk_teamA_Id` = `teama`.`teamId` 
 	LEFT JOIN `teamb` ON `events`.`fk_teamB_Id` = `teamb`.`teamId` 
 	LEFT JOIN `location` ON `events`.`fk_locationId` = `location`.`locationId` 
-	LEFT JOIN `category` ON `events`.`fk_categoryId` = `category`.`categoryId`;";
+	LEFT JOIN `category` ON `events`.`fk_categoryId` = `category`.`categoryId` WHERE event_date < CURDATE();";
 
 
 $result = mysqli_query($connect ,$sql);
@@ -35,8 +32,7 @@ if(mysqli_num_rows($result) > 0){
           <p class='card-title fs-2'>" . $row['teamA_name'] . " vs " . $row['teamB_name'] . "</p>
         <p class='card-text'>" . $row['location_name'] . "</p>
         <p class='card-text'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aliquam, iusto consequatur amet repellat at.</p>
-        <a href='update.php?eventId=" . $row['eventId'] . "'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
-        <a href='delete.php?eventId=" . $row['eventId'] . "'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a>
+        <a href='details.php?eventId=" . $row['eventId'] . "'><button class='btn btn-primary btn-sm' type='button'>Details</button></a>
       </div>
     </div>
   </div>
@@ -57,16 +53,16 @@ if(mysqli_num_rows($result) > 0){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <?php  require_once 'components/bootcss.php'?>
+    <?php  require_once 'events/components/bootcss.php'?>
 
 </head>
 
 <body class="mx-auto">
 
-<?php  require_once 'components/_navbar.php'?>
+<?php  require_once 'events/components/_navbar.php'?>
+
  <div class="manageEvent mx-auto w-75 mt-3">
-  
-     <h2>Events</h2>
+     <h2>Former Events</h2>
     <div class="d-flex justify-content-center row g-5 mx-auto">
     <?= $eventDiv;?>
     </div>
@@ -75,9 +71,6 @@ if(mysqli_num_rows($result) > 0){
  </div>
  
     
-<?php  require_once 'components/bootjs.php'?>
+<?php  require_once 'events/components/bootjs.php'?>
 </body>
 </html>
-
-
-

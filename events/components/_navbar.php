@@ -10,10 +10,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="../events/index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Former Events</a>
+          <a class="nav-link active" href="../formerEvents.php">Former Events</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="#">About</a>
@@ -23,28 +23,20 @@
             Actions
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Events</a></li>
-            <li><a class="dropdown-item" href="#">Teams </a></li>
-            <li><a class="dropdown-item" href="#">Locations</a></li>
-            <li><a class="dropdown-item" href="#">Categories</a></li>
+            <li><a class="dropdown-item" href="../events/index.php">Events</a></li>
+            <li><a class="dropdown-item" href="../teams/teams.php">Teams </a></li>
+            <li><a class="dropdown-item" href="../locations/locations.php">Locations</a></li>
+            <li><a class="dropdown-item" href="../categories/categories.php">Categories</a></li>
           </ul>
         </li>
       </ul>
       <form class="d-flex">
         
-        <a href=""><button class="btn btn-outline-success" type="submit">Log out</button></a>
+        <a href="../logout.php?logout">Log out</a>
       </form>
     </div>
   </div>
 </nav>
-</header>
- <div class="manageEvent mx-auto w-75 mt-3">
-     <div class="mb-3">
-         <a href="create.php">
-             <button class="btn btn-primary" type="button">New Event</button>
-        </a>
-     </div>
-     
     ';
 
     }
@@ -55,17 +47,17 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">EVENTRADAR</a>
+    <a class="navbar-brand" href="index.php">EVENTRADAR</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Former Events</a>
+          <a class="nav-link active" href="formerEvents.php">Former Events</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="#">About</a>
@@ -73,8 +65,8 @@
         
       </ul>
       <ul class="d-flex navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="#">Log in</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">Register</a></li>
+        <li class="nav-item"><a class="nav-link active" href="login.php">Log in</a></li>
+        <li class="nav-item"><a class="nav-link active" href="register.php">Register</a></li>
       </ul>
     </div>
   </div>
@@ -82,7 +74,7 @@
            ';
 
     } 
-    
+  
 
     ?>
     

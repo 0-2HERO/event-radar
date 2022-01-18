@@ -25,7 +25,7 @@ if ($_POST) {
             <table class='table w-50'><tr>
             <td> $name </td>
             <td> $date </td>
-            <td> $$time </td>
+            <td> $time </td>
             </tr></table><hr>";
     } else {
         $class = "danger";

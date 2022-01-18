@@ -14,7 +14,7 @@ if ($_POST) {
 
     if (mysqli_query($connect, $sql) === true) {
         $class = "success";
-        $message = "Event was successfully created <br>
+        $message = "Location was successfully created <br>
             <table class='table w-50'>
             <tr>
             <td> $loc_name </td>
@@ -23,7 +23,7 @@ if ($_POST) {
             <hr>";
     } else {
         $class = "danger";
-        $message = "Error while creating Location. Try again: <br>" . $connect->error;;
+        $message = "Error while creating location. Try again: <br>" . $connect->error;;
     }
     mysqli_close($connect);
 } else {

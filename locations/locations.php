@@ -1,7 +1,14 @@
 <?php
+session_start();
 require_once  '../events/components/db_connect.php';
 
 
+if( !isset($_SESSION['user'])) {
+    header("Location: ../login.php");
+    exit;
+   }
+
+   
 $sql = "SELECT * FROM `location`";
 $result = mysqli_query($connect ,$sql);
 

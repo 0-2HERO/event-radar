@@ -1,6 +1,12 @@
 <?php
+session_start();
 
 require_once "../events/components/db_connect.php";
+
+if( !isset($_SESSION['user'])) {
+    header("Location: ../login.php");
+    exit;
+   }
 
 $category = "";
 $teamA = "";
@@ -13,12 +19,6 @@ while ($row = $resultCat->fetch_array(MYSQLI_ASSOC)) {
     $category .=
         "<option value='{$row['categoryId']}'>{$row['category_name']}</option>";
 }
-
-
-
-
-
-
 
 ?>
 

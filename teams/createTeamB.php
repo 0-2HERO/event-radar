@@ -1,6 +1,12 @@
 <?php
+session_start();
 
 require_once "../events/components/db_connect.php";
+
+if( !isset($_SESSION['user'])) {
+    header("Location: ../login.php");
+    exit;
+   }
 
 $category = "";
 

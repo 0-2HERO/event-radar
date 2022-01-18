@@ -1,6 +1,13 @@
 <?php
+
+session_start();
 require_once  '../events/components/db_connect.php';
 
+
+if( !isset($_SESSION['user'])) {
+    header("Location: ../login.php");
+    exit;
+   }
 
 $sql = "SELECT * FROM `category`";
 $result = mysqli_query($connect, $sql);
@@ -39,7 +46,7 @@ if (mysqli_num_rows($result) > 0) {
 
     <?php require_once '../events/components/_navbar.php' ?>
 
-    <div class="manageCategorymt-3 mx-auto mt-3" style="width: 30%;">
+    <div class="manageCategory mt-3 mx-auto mt-3" style="width: 30%;">
         <div class='mb-3'>
 
             <a href="createCat.php"><button class='btn btn-primary' type="button">Add Category</button></a>

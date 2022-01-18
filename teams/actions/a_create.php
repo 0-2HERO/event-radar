@@ -46,7 +46,7 @@ if ($_POST) {
         </div>
         <div class="alert alert-<?= $class; ?>" role="alert">
             <p><?php echo ($message) ?? ''; ?></p>
-            <a href="createTeamB.php"><button class='btn btn-success' type="button"> Create Team B </button></a>
+            <a href="../createTeamB.php"><button class='btn btn-success' type="button"> Create Team B </button></a>
             <a href=/events/index.php><button class="btn btn-primary" type='button'>Home</button></a>
         </div>
         </div>

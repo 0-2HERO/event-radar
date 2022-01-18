@@ -10,7 +10,7 @@ if ($_POST) {
 
     if (mysqli_query($connect, $sql) === true) {
         $class = "success";
-        $message = "Event was successfully created <br>
+        $message = "Category was successfully created <br>
             <table class='table w-50'>
             <tr>
             <td> $category </td>
@@ -19,7 +19,7 @@ if ($_POST) {
             <hr>";
     } else {
         $class = "danger";
-        $message = "Error while creating Category. Try again: <br>" . $connect->error;;
+        $message = "Error while creating category. Try again: <br>" . $connect->error;;
     }
     mysqli_close($connect);
 } else {

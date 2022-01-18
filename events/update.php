@@ -1,7 +1,12 @@
 <?php
 
+session_start();
 require_once 'components/db_connect.php';
 
+if( !isset($_SESSION['user'])) {
+    header("Location: ../login.php");
+    exit;
+   }
 
 
 if ($_GET['eventId']) {
@@ -80,9 +85,6 @@ if (mysqli_num_rows($resultList) > 0) {
 } else {
     $locationList = "<li>There are no categories available</li>";
 }
-
-
-
 
 ?>
 
@@ -168,7 +170,7 @@ if (mysqli_num_rows($resultList) > 0) {
                     </td>
                 </tr>
                 <tr>
-                    <th>Category </th>
+                    <th>Location </th>
                     <td>
                         <select class="form-select" name="location_name" aria-label="Default select example">
                             <?php echo $locationList; ?>
