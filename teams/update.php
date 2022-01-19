@@ -50,8 +50,9 @@ header("location: error.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Event</title>
+    <title>Update team A</title>
     <?php  require_once '../events/components/bootcss.php'?>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
     <style type="text/css">
@@ -69,7 +70,9 @@ header("location: error.php");
 </style>
 <body>
 
-    <fieldset>
+<?php require_once '../events/components/_navbar.php' ?>
+
+    <fieldset class="fieldset-forms">
         <legend class='h2'>Update Team</legend>
         <form action="actions/a_update.php" method="post" enctype="multipart/form-data">
             <table class='table'>
@@ -102,6 +105,9 @@ header("location: error.php");
         </form>
     </fieldset>
 
+
+    <?php require_once '../events/components/_footer.php' ?>
+    <?php require_once '../events/components/bootjs.php' ?>
 </body>
 
 </html>

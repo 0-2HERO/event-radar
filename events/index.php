@@ -2,10 +2,10 @@
 session_start();
 require_once 'components/db_connect.php';
 
-if( !isset($_SESSION['user'])) {
-    header("Location: ../login.php");
-    exit;
-   }
+if (!isset($_SESSION['user'])) {
+  header("Location: ../login.php");
+  exit;
+}
 
 $sql = "SELECT `events`.`event_name`, `events`.`eventId`, `teama`.`teamA_name`, `teamb`.`teamB_name`, `location`.`location_name`, `category`.`category_name`, `events`.`picture`
 FROM `events` 
@@ -15,16 +15,16 @@ FROM `events`
 	LEFT JOIN `category` ON `events`.`fk_categoryId` = `category`.`categoryId`;";
 
 
-$result = mysqli_query($connect ,$sql);
+$result = mysqli_query($connect, $sql);
 
 
 
 $eventDiv = "";
-if(mysqli_num_rows($result) > 0){
-    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-        
-        $eventDiv .= "
-        <div class='card mb-3 mx-auto p-0' style='max-width: 80%;'>
+if (mysqli_num_rows($result) > 0) {
+  while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+
+    $eventDiv .= "
+        <div class='card mb-3 events-card  mx-auto p-0' style='max-width: 80%;'>
   <div class='row g-0'>
     <div class='col-md-4'>
       <img src='" . $row['picture'] . " ' class='img-fluid rounded-start' alt='...'>
@@ -42,9 +42,9 @@ if(mysqli_num_rows($result) > 0){
   </div>
 </div>
 ";
-    };
+  };
 } else {
-    $eventDiv = "<h2>No Events Available</h2>";
+  $eventDiv = "<h2>No Events Available</h2>";
 }
 
 
@@ -52,32 +52,33 @@ if(mysqli_num_rows($result) > 0){
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <?php  require_once 'components/bootcss.php'?>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Homepage</title>
+  <?php require_once 'components/bootcss.php' ?>
+  <link rel="stylesheet" href="/css/styles.css">
 
 </head>
 
 <body class="mx-auto">
 
-<?php  require_once 'components/_navbar.php'?>
- <div class="manageEvent mx-auto w-75 mt-3">
-  
-     <h2>Events</h2>
+  <?php require_once 'components/_navbar.php' ?>
+  <div class="manageEvent mx-auto w-75 mt-3">
+
+    <h2>Events</h2>
     <div class="d-flex justify-content-center row g-5 mx-auto">
-    <?= $eventDiv;?>
+      <?= $eventDiv; ?>
     </div>
-             
-           
- </div>
- 
-    
-<?php  require_once 'components/bootjs.php'?>
+
+
+  </div>
+
+
+  <?php require_once 'components/bootjs.php' ?>
+  <?php require_once 'components/_footer.php' ?>
 </body>
+
 </html>
-
-
-

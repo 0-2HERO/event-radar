@@ -2,6 +2,10 @@
 session_start();
 require_once 'events/components/db_connect.php';
 
+if (isset($_SESSION['user'])) {
+    header("Location: ../events/index.php");
+    exit;
+ }
 
          if ($_GET['eventId']) {
             $eventId = $_GET['eventId'];
@@ -44,6 +48,7 @@ require_once 'events/components/db_connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo $name; ?></title>
     <?php require_once 'events/components/bootcss.php' ?>
+    <link rel="stylesheet" href="css/styles.css">
     
 </head>
 
@@ -51,7 +56,7 @@ require_once 'events/components/db_connect.php';
 <?php  require_once 'events/components/_navbar.php'?>
 
 <div class='container mt-5'>
-        <h2><?php echo $category ?> event details</h2> 
+        <h2><?php echo $category ?> team details</h2> 
     </div>
     <div class='container mt-5' id='detail'>
         <div class='row g-5'>
@@ -73,7 +78,7 @@ require_once 'events/components/db_connect.php';
     </div> 
 
 
-
+    <?php require_once 'events/components/_footer.php' ?>           
     <?php require_once 'events/components/bootjs.php' ?>
 
  

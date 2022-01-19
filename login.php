@@ -2,12 +2,12 @@
 session_start();
 require_once "events/components/db_connect.php";
 
-// if adm will redirect to dashboard
+
 if (isset($_SESSION['user'])) {
     header("Location: ../events/index.php");
     exit;
  }
- // if session is not set this will redirect to login page
+ 
  
  
  
@@ -72,28 +72,65 @@ if (isset($_SESSION['user'])) {
  <title>Login & Registration System</title>
  <?php require_once 'events/components/bootcss.php'?>
  </head>
+ <style>
+    .login,
+.image {
+    min-height: 100vh
+}
+
+.bg-image {
+    background-color: #0B0D4B;
+    background-size: cover;
+    background-position: center;
+    min-width: 55%;
+}
+/* form log in  */
+
+
+.bg-imagetwo {
+    background-color: #0B0D4B;
+    background-size:cover;
+    background-position:center;
+    min-width: 55%;
+    
+}
+</style>
  <body>
 
-    <div class="container">
-        <form class="w-75" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-            <h2>LogIn</h2>
-            <hr/>
+
+ <div class="container-fluid">
+                <div class="row no-gutter">
+                    <div class="col-md-7 d-none d-md-flex bg-image d-flex justify-content-center align-items-center">
+                       <h1 class="text-danger display-4">Eventradar</h1>
+                    </div>
+                    <div class="col-md-5 bg-light">
+                        <div class="login d-flex align-items-center py-5">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-7 col-xl-6 mx-auto">
+                                        <h3 class="display-4">Sign in</h3> <br>
+                                        <form class="w-50" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off" >
             <?php
             if (isset($errMSG)) {
                 echo $errMSG;
             }
             ?>
-        
-            <input type="email" autocomplete="off" name="email" class="form-control" placeholder="Your Email" value="<?php echo $email; ?>"  maxlength="40" />
-            <span class="text-danger"><?php echo $emailError; ?></span>
- 
-            <input type="password" name="pass"  class="form-control" placeholder="Your Password" maxlength="15"  />
-            <span class="text-danger"><?php echo $passError; ?></span>
-            <hr/>
-            <button class="btn btn-block btn-primary" type="submit" name="btn-login">Sign In</button>
-            <hr/>
-            <a href="register.php">Not registered yet? Click here</a>
-        </form>
-    </div>
+          <div class="form-group mb-3"> <input type="email" autocomplete="off" name="email" class="form-control  rounded-pill border-0 shadow-sm px-4 " placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" /> <span class="text-danger"><?php echo $emailError; ?></span> </div>
+                                            <div class="form-group mb-3"> <input type="password" name="pass" class="form-control rounded-pill border-0 shadow-sm px-4 text-danger" placeholder="Your Password" maxlength="15" /> <br> <span class="text-danger"><?php echo $passError; ?></span> </div>
+                                            <div class="custom-control custom-checkbox mb-3"> <button class="btn btn-block btn-primary" type="submit" name="btn-login">Sign In</button></div>
+                                            <div class="text-center d-flex justify-content-between mt-4">
+                                                <p> OR &nbsp<a href="register.php" class="font-italic text-muted"> <u>Create Account</u></a></p>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
  </body>
  </html>
+
+
+ 

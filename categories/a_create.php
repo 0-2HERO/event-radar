@@ -4,7 +4,7 @@ require_once "../events/components/db_connect.php";
 
 if ($_POST) {
     $category = $_POST['category_name'];
-   
+
 
     $sql = "INSERT INTO `category`(`category_name`) VALUES ('$category')";
 
@@ -46,9 +46,10 @@ if ($_POST) {
             <p><?php echo ($message) ?? ''; ?></p>
             <a href=/events/index.php><button class="btn btn-primary" type='button'>Home</button></a>
         </div>
-        </div>
+    </div>
 
-        <?php require_once  '../events/components/bootjs.php' ?>
+    <?php require_once '../events/components/_footer.php' ?>
+    <?php require_once  '../events/components/bootjs.php' ?>
 </body>
 
 </html>

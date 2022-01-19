@@ -30,22 +30,19 @@ if ($_GET['categoryId']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update category</title>
     <?php  require_once '../events/components/bootcss.php'?>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
     <style type="text/css">
         fieldset {
             margin: auto;
-            margin-top: 100px;
+            margin-top: 10rem;
             width: 60%;
+            margin-bottom: 20rem;
         }
-
-        .img-thumbnail {
-            width: 70px !important;
-            height: 70px !important;
-        }
-    
 </style>
 <body>
+<?php require_once  '../events/components/_navbar.php' ?>
 
     <fieldset>
         <legend class='h2'>Update category</legend>
@@ -66,6 +63,9 @@ if ($_GET['categoryId']) {
         </form>
     </fieldset>
 
+
+    <?php require_once  '../events/components/_footer.php' ?>
+    <?php require_once  '../events/components/bootjs.php' ?>
 </body>
 
 </html>

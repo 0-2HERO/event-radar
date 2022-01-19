@@ -1,11 +1,11 @@
-<?php 
+<?php
 session_start();
 require_once  '../events/components/db_connect.php';
 
-if( !isset($_SESSION['user'])) {
+if (!isset($_SESSION['user'])) {
     header("Location: ../login.php");
     exit;
-   }
+}
 
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,8 @@ if( !isset($_SESSION['user'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once  '../events/components/bootcss.php' ?>
-    <title>Create Location</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Create Category</title>
 </head>
 
 <body>
@@ -24,7 +25,9 @@ if( !isset($_SESSION['user'])) {
     </head>
 
     <body>
-        <fieldset class="mx-auto  mt-5" style="width: 60%;">
+        <?php require_once  '../events/components/_navbar.php' ?>
+
+        <fieldset class="mx-auto fieldset-forms mt-5"  style="margin-bottom: 25rem;">
             <legend class='h2'>New Category</legend>
             <form action="a_create.php" method="post" enctype="multipart/form-data">
                 <table class='table'>
@@ -41,8 +44,8 @@ if( !isset($_SESSION['user'])) {
             </form>
         </fieldset>
 
-        
 
+        <?php require_once '../events/components/_footer.php' ?>
         <?php require_once  '../events/components/bootjs.php' ?>
 
     </body>

@@ -1,6 +1,6 @@
 <?php
 require_once  '../events/components/db_connect.php';
-  
+
 if ($_POST) {
     $loc_name = $_POST['location_name'];
     $street = $_POST['street'];
@@ -12,7 +12,7 @@ if ($_POST) {
 
     $sql = "UPDATE `location` SET `location_name`='$loc_name',`street`='$street',`street_no`='$street_no',`city`='$city',`zip_code`='$zip_code' WHERE locationId = {$locationId}";
 
-        if (mysqli_query($connect, $sql) === TRUE) {
+    if (mysqli_query($connect, $sql) === TRUE) {
         $class = "success";
         $message = "Location was successfully updated";
     } else {
@@ -42,10 +42,13 @@ if ($_POST) {
         </div>
         <div class="alert alert-<?php echo $class; ?>" role="alert">
             <p><?php echo ($message) ?? ''; ?></p>
-          
+
             <a href='../update.php?id=<?= $id; ?>'><button class="btn btn-warning" type='button'>Back</button></a>
             <a href='/events/index.php'><button class="btn btn-success" type='button'>Home</button></a>
         </div>
     </div>
+
+    <?php require_once '../events/components/_footer.php' ?>
     <?php require_once '../events/components//bootjs.php' ?>
 </body>
+</html>

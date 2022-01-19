@@ -32,8 +32,9 @@ if ($_GET['locationId']) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Event</title>
+    <title>Update Location</title>
     <?php  require_once '../events/components/bootcss.php'?>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
     <style type="text/css">
@@ -51,7 +52,8 @@ if ($_GET['locationId']) {
 </style>
 <body>
 
-    <fieldset>
+<?php require_once '../events/components/_navbar.php' ?>
+    <fieldset class="fieldset-forms">
         <legend class='h2'>Update Location</legend>
         <form action="a_update.php" method="post" enctype="multipart/form-data">
             <table class='table'>
@@ -91,6 +93,9 @@ if ($_GET['locationId']) {
         </form>
     </fieldset>
 
+
+    <?php require_once '../events/components/_footer.php' ?>
+    <?php require_once '../events/components/bootjs.php' ?>
 </body>
 
 </html>

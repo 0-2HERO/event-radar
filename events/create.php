@@ -1,11 +1,11 @@
 <?php
- session_start();
+session_start();
 require_once 'components/db_connect.php';
 
-if( !isset($_SESSION['user'])) {
+if (!isset($_SESSION['user'])) {
     header("Location: ../login.php");
     exit;
-   }
+}
 
 $category = "";
 $teamA = "";
@@ -61,7 +61,7 @@ while ($row = $resultLoc->fetch_array(MYSQLI_ASSOC)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once  'components/bootcss.php' ?>
-    <title>Document</title>
+    <title>Create Event</title>
 </head>
 
 <body>
@@ -69,7 +69,7 @@ while ($row = $resultLoc->fetch_array(MYSQLI_ASSOC)) {
     </head>
 
     <body>
-    <?php  require_once 'components/_navbar.php'?>
+        <?php require_once 'components/_navbar.php' ?>
         <fieldset class="mx-auto  mt-5" style="width: 60%;">
             <legend class='h2'>New Event</legend>
             <form action="actions/a_create.php" method="post" enctype="multipart/form-data">
@@ -139,8 +139,8 @@ while ($row = $resultLoc->fetch_array(MYSQLI_ASSOC)) {
             </form>
         </fieldset>
 
+        <?php require_once 'components/_footer.php' ?>
         <?php require_once  'components/bootjs.php' ?>
-
     </body>
 
 </html>

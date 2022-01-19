@@ -1,7 +1,7 @@
 <?php 
 
 $hostname = "127.0.0.1";
-$username = "root";
+$username = "root"; 
 $password = "";
 $dbname = "eventradar";
 

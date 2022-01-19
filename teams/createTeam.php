@@ -31,7 +31,8 @@ while ($row = $resultCat->fetch_array(MYSQLI_ASSOC)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once  '../events/components/bootcss.php' ?>
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Create team A</title>
 </head>
 
 <body>
@@ -39,7 +40,10 @@ while ($row = $resultCat->fetch_array(MYSQLI_ASSOC)) {
     </head>
 
     <body>
-        <fieldset class="mx-auto  mt-5" style="width: 60%;">
+
+    <?php require_once '../events/components/_navbar.php' ?>
+
+        <fieldset class="mx-auto fieldset-forms mt-5">
             <legend class='h2'>New Team</legend>
             <form action="actions/a_create.php" method="post" enctype="multipart/form-data">
                 <table class='table'>
@@ -70,7 +74,7 @@ while ($row = $resultCat->fetch_array(MYSQLI_ASSOC)) {
         </fieldset>
 
 
-
+        <?php require_once '../events/components/_footer.php' ?>
         <?php require_once  '../events/components/bootjs.php' ?>
 
     </body>

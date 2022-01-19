@@ -1,6 +1,6 @@
 <?php
 require_once '../components/db_connect.php';
-  
+
 if ($_POST) {
     $name = $_POST['event_name'];
     $date = $_POST['event_date'];
@@ -13,13 +13,13 @@ if ($_POST) {
     $location = $_POST['location_name'];
     $eventId = $_POST['eventId'];
 
-    
+
 
 
 
     $sql = "UPDATE `events` SET `event_name`='$name',`event_date`='$date',`event_time`='$time',`description`='$description',`picture`='$picture',`fk_teamA_Id`='$teamA',`fk_teamB_Id`='$teamB',`fk_categoryId`='$category',`fk_locationId`='$location' WHERE eventId = {$eventId}";
 
-        if (mysqli_query($connect, $sql) === TRUE) {
+    if (mysqli_query($connect, $sql) === TRUE) {
         $class = "success";
         $message = "The record was successfully updated";
     } else {
@@ -48,7 +48,7 @@ if ($_POST) {
         </div>
         <div class="alert alert-<?php echo $class; ?>" role="alert">
             <p><?php echo ($message) ?? ''; ?></p>
-          
+
             <a href='../update.php?id=<?= $id; ?>'><button class="btn btn-warning" type='button'>Back</button></a>
             <a href='../index.php'><button class="btn btn-success" type='button'>Home</button></a>
         </div>

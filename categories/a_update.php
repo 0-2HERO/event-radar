@@ -1,6 +1,6 @@
 <?php
 require_once  '../events/components/db_connect.php';
-  
+
 if ($_POST) {
     $cat_name = $_POST['category_name'];
     $categoryId = $_POST['categoryId'];
@@ -8,7 +8,7 @@ if ($_POST) {
 
     $sql = "UPDATE `category` SET `category_name`='$cat_name' WHERE categoryId = {$categoryId}";
 
-        if (mysqli_query($connect, $sql) === TRUE) {
+    if (mysqli_query($connect, $sql) === TRUE) {
         $class = "success";
         $message = "Category was successfully updated";
     } else {
@@ -38,10 +38,11 @@ if ($_POST) {
         </div>
         <div class="alert alert-<?php echo $class; ?>" role="alert">
             <p><?php echo ($message) ?? ''; ?></p>
-          
+
             <a href='../update.php?id=<?= $id; ?>'><button class="btn btn-warning" type='button'>Back</button></a>
             <a href='/events/index.php'><button class="btn btn-success" type='button'>Home</button></a>
         </div>
     </div>
+    <?php require_once '../events/components/_footer.php' ?>
     <?php require_once '../events/components//bootjs.php' ?>
 </body>

@@ -4,10 +4,10 @@ session_start();
 require_once  '../events/components/db_connect.php';
 
 
-if( !isset($_SESSION['user'])) {
+if (!isset($_SESSION['user'])) {
     header("Location: ../login.php");
     exit;
-   }
+}
 
 $sql = "SELECT * FROM `category`";
 $result = mysqli_query($connect, $sql);
@@ -39,14 +39,24 @@ if (mysqli_num_rows($result) > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categories</title>
     <?php require_once  '../events/components/bootcss.php' ?>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+.fieldset-catg{
 
+    width: 30%; 
+    margin-bottom: 15rem;
+    margin-top: 10rem;
+
+}
+
+    </style>
 </head>
 
 <body>
 
     <?php require_once '../events/components/_navbar.php' ?>
 
-    <div class="manageCategory mt-3 mx-auto mt-3" style="width: 30%;">
+    <div class="fieldset-catg mx-auto">
         <div class='mb-3'>
 
             <a href="createCat.php"><button class='btn btn-primary' type="button">Add Category</button></a>
@@ -66,6 +76,7 @@ if (mysqli_num_rows($result) > 0) {
         </table>
     </div>
 
+    <?php require_once '../events/components/_footer.php' ?>
     <?php require_once '../events/components/bootjs.php' ?>
 </body>
 

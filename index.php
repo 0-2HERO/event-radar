@@ -2,83 +2,68 @@
 session_start();
 require_once 'events/components/db_connect.php';
 
-// if adm will redirect to dashboard
-if (isset($_SESSION['user'])) {
-    header("Location: ../events/index.php");
-    exit;
- }
-
-
-$sql = "SELECT `events`.`event_name`, `events`.`eventId`, `teama`.`teamA_name`, `teamb`.`teamB_name`, `location`.`location_name`, `category`.`category_name`, `events`.`picture`
-FROM `events` 
-	LEFT JOIN `teama` ON `events`.`fk_teamA_Id` = `teama`.`teamId` 
-	LEFT JOIN `teamb` ON `events`.`fk_teamB_Id` = `teamb`.`teamId` 
-	LEFT JOIN `location` ON `events`.`fk_locationId` = `location`.`locationId` 
-	LEFT JOIN `category` ON `events`.`fk_categoryId` = `category`.`categoryId`;";
-
-
-$result = mysqli_query($connect ,$sql);
-
-
-
-$eventDiv = "";
-if(mysqli_num_rows($result) > 0){
-    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-        
-        $eventDiv .= "
-        <div class='card mb-3 mx-auto p-0' style='max-width: 80%;'>
-  <div class='row g-0'>
-    <div class='col-md-4'>
-      <img src='" . $row['picture'] . " ' class='img-fluid rounded-start' alt='...'>
-    </div>
-    <div class='col-md-8'>
-      <div class='card-body'>
-          <p class='fs-6 text-end' >" . $row['category_name'] . "</p>
-          <p class='card-title fs-2'>" . $row['teamA_name'] . " vs " . $row['teamB_name'] . "</p>
-        <p class='card-text'>" . $row['location_name'] . "</p>
-        <p class='card-text'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aliquam, iusto consequatur amet repellat at.</p>
-        <a href='details.php?eventId=" . $row['eventId'] . "'><button class='btn btn-primary btn-sm' type='button'>Details</button></a>
-      </div>
-    </div>
-  </div>
-</div>
-";
-    };
-} else {
-    $eventDiv = "<h2>No Events Available</h2>";
-}
-
-
+$connect = new PDO("mysql:host=localhost;dbname=eventradar", "root", "");
+$query = " SELECT DISTINCT category_name FROM category ORDER BY category_name ASC";
+$statement = $connect->prepare($query);
+$statement->execute();
+$result = $statement->fetchAll();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <?php  require_once 'events/components/bootcss.php'?>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <?php require_once 'events/components/bootcss.php' ?>
+  <link rel="stylesheet" href="css/styles.css">
+
 
 </head>
 
-<body class="mx-auto">
-
-<?php  require_once 'events/components/_navbar.php'?>
-
- <div class="manageEvent mx-auto w-75 mt-3">
-     <h2>Events</h2>
-    <div class="d-flex justify-content-center row g-5 mx-auto">
-    <?= $eventDiv;?>
-    </div>
-             
-           
- </div>
+<body class="m-auto">
  
-    
-<?php  require_once 'events/components/bootjs.php'?>
+  <?php require_once 'events/components/_navbar.php' ?>
+
+
+  <h2 class="text-center my-5">Events</h2><br />
+  <section>
+  <div class="container mt-5 mb-5" id="page-container">
+
+
+    <div class="d-flex justify-content-around">
+
+      <div>
+        <label for="multi_search_filter">Filter by Category</label>
+        <select class="form-select  selectpicker" name="multi_search_filter" id="multi_search_filter" aria-label="Default select example" style="width: 12rem;">
+          <?php
+          foreach ($result as $row) {
+            echo '<option value="' . $row["category_name"] . '">' . $row["category_name"] . '</option>';
+          }
+          ?>
+        </select>
+        <input type="hidden" name="hidden_category" id="hidden_category" />
+      </div>
+      <span class="py-3">
+
+        <button class="button btn btn-danger" onClick="history.go(0);">Reset filter</button>
+      </span>
+    </div>
+
+    <table>
+      <tbody></tbody>
+    </table>
+
+  </div>
+  </section>
+  <?php require_once 'events/components/_footer.php' ?>
+  <?php require_once 'events/components/bootjs.php' ?>
+  <?php require_once 'events/components/functions.php' ?>
+  
 </body>
+
 </html>
-
-
-

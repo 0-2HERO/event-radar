@@ -1,0 +1,29 @@
+/* NAVBAR */
+
+.navbar  {
+    background-color: #0B0D4B;
+  }
+
+  .events-card {
+    background-color: #F6F6F6;
+
+
+
+  }
+/* NAVBAR */
+
+
+/* FOOTER */
+  footer {
+    background-color: #0B0D4B;
+    bottom: 0;
+   
+  }
+/* FOOTER */
+
+
+.fieldset-forms {
+
+    margin-bottom: 15rem;
+    width: 60%;
+}

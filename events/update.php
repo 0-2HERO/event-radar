@@ -189,6 +189,9 @@ if (mysqli_num_rows($resultList) > 0) {
         </form>
     </fieldset>
 
+
+    <?php  require_once 'components/_footer.php'?>
+    <?php  require_once 'components/bootjs.php'?>
 </body>
 
 </html>
