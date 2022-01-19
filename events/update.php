@@ -97,6 +97,7 @@ if (mysqli_num_rows($resultList) > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Event</title>
     <?php  require_once 'components/bootcss.php'?>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
     <style type="text/css">
@@ -113,6 +114,8 @@ if (mysqli_num_rows($resultList) > 0) {
     
 </style>
 <body>
+
+<?php  require_once 'components/_navbar.php'?>
 
     <fieldset>
         <legend class='h2'>Update Event<img class='img-thumbnail rounded-circle' src='<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
