@@ -36,8 +36,21 @@ Required parts:
 Additional filters can be added to the calendar presentation  
 
  </br> </br>
- 1. Task  <strong>Entity-Relationship-Diagram       
+ 1.  <strong>Entity-Relationship-Diagram       
  </br>
  
 ![Entity-Relationship-Diagram](https://user-images.githubusercontent.com/64213996/149678046-a444a658-600c-4521-8025-ebab6e49dd9e.png)
+
+</br> </br>
+3.  <strong>Html frontend to display data
+ 
+ 
+
+![login](https://user-images.githubusercontent.com/64213996/150086679-5ce71073-ad77-441d-a11d-1f9332fa535b.png)
+
+![home](https://user-images.githubusercontent.com/64213996/150086720-41d4b23c-5cc4-423e-95c1-0fb5695e8cc3.png)
+ 
+![edit event](https://user-images.githubusercontent.com/64213996/150086745-1c490c22-a1a2-44bc-bd11-e38e2ffe89d6.png)
+ 
+ ![locations](https://user-images.githubusercontent.com/64213996/150086776-cb25c311-bd07-48f8-9f6d-9342f58ab4e1.png)
 
