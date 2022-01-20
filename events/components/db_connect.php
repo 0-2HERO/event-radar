@@ -1,9 +1,9 @@
 <?php 
 
-$hostname = "127.0.0.1";
-$username = "root"; 
-$password = "";
-$dbname = "eventradar";
+$hostname = "127.0.0.1"; //173.212.235.205
+$username = "root"; // alexanda_alex
+$password = ""; //eventradar1
+$dbname = "eventradar"; //alexanda_eventradar
 
 $connect = mysqli_connect($hostname, $username, $password, $dbname);
 

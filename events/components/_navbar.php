@@ -19,7 +19,7 @@
           <a class="nav-link active text-light" href="../formerEvents.php">Former Events</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-light" href="#">About</a>
+          <a class="nav-link active text-light" href="https://github.com/0-2HERO/event-radar#readme">About</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle active text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,10 +48,10 @@
 
         echo '
 
-        <nav class="navbar navbar-expand-lg navbar-light sticky-top py-4">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-4">
   <div class="container-fluid">
     <a class="navbar-brand text-danger" href="index.php">EVENTRADAR</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler border-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -66,7 +66,7 @@
           <a class="nav-link active text-white" href="formerEvents.php">Former Events</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-white" href="#">About</a>
+          <a class="nav-link active text-white" href="https://github.com/0-2HERO/event-radar#readme">About</a>
         </li>
         
       </ul>
