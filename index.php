@@ -5,9 +5,8 @@ require_once "events/components/db_connect.php";
 
 
 
-$decider = "";
- $recbdy = "";
 
+$recbdy = "";
 
 $recbdy = $resCat = $resLoc = $resA = $resB = "";
 
@@ -75,7 +74,7 @@ if ($result5->num_rows > 0) {
     }
 }
 
-
+var_dump($recbdy);
 
 mysqli_close($connect);
 ?>
@@ -165,9 +164,8 @@ mysqli_close($connect);
     <?php require_once 'events/components/bootjs.php' ?>
   
     <script>
-        let decider = "<?php echo $decider ?>";
+        
         document.getElementById("filter-button").addEventListener("click", recFilter);
-
         function recFilter(e) {
             e.preventDefault();
          
@@ -184,8 +182,6 @@ mysqli_close($connect);
             request.onload = function() {
                 if (this.status == 200) {
                     document.getElementById("events").innerHTML = this.responseText;
-                    let buttons = document.getElementsByClassName("choice-btn");
-                   
 
                 }
             }
