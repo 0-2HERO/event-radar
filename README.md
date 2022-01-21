@@ -1,4 +1,7 @@
 # event-radar
+
+* webpage is available here: https://alexandar.codefactory.live/
+
 Calendar for sports events. Events may be added to the calendar and categorized based on sports
 
 1. Coding Exercise 
@@ -48,9 +51,26 @@ Additional filters can be added to the calendar presentation
 
 ![login](https://user-images.githubusercontent.com/64213996/150086679-5ce71073-ad77-441d-a11d-1f9332fa535b.png)
 
-![home](https://user-images.githubusercontent.com/64213996/150086720-41d4b23c-5cc4-423e-95c1-0fb5695e8cc3.png)
+![home](https://user-images.githubusercontent.com/64213996/150318485-46b8163f-0129-4af4-97f4-9f787097f1ab.png)
+
+ ![mobile](https://user-images.githubusercontent.com/64213996/150318529-5cd94bcd-d340-42d7-995f-bb8a4e485025.png)
  
 ![edit event](https://user-images.githubusercontent.com/64213996/150086745-1c490c22-a1a2-44bc-bd11-e38e2ffe89d6.png)
  
  ![locations](https://user-images.githubusercontent.com/64213996/150086776-cb25c311-bd07-48f8-9f6d-9342f58ab4e1.png)
+ 
+#Installation
+ <hr>
+- PHP MySQL and XAMPP.
+
+- Clone the repository  
+- Import datebase 
+- PHP server: Serve project
+
+
+- User credentials: user@mail.com 
+password: 123456
+
+ 
+
 
