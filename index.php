@@ -11,7 +11,7 @@ $recbdy = "";
 $recbdy = $resCat = $resLoc = $resA = $resB = "";
 
 /* $maxcal = 2000; */
-$error = false;
+
 $sql = "SELECT `events`.`event_name`, `events`.`eventId`, `events`.`description` , `events`.`event_date` ,`events`.`event_time`,`teama`.`teamA_name`, `teamb`.`teamB_name`, `location`.`location_name`, `category`.`category_name`, `events`.`picture`
 FROM `events` 
     LEFT JOIN `teama` ON `events`.`fk_teamA_Id` = `teama`.`teamId` 
@@ -74,7 +74,7 @@ if ($result5->num_rows > 0) {
     }
 }
 
-var_dump($recbdy);
+
 
 mysqli_close($connect);
 ?>

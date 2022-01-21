@@ -17,6 +17,7 @@ if (isset($_POST['category']) && isset($_POST['location']) && isset($_POST['team
     }  else {
         $insertCat = " categoryId='$category' ";
     }
+
     if ($location == "all") {
         $insertLoc = " 1 ";
     }  else {
